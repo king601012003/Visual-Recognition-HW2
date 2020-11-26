@@ -101,7 +101,7 @@ To test models:
 cd /path/to/your/darknet/
 ./darknet detector test cfg/my.data cfg/yolov4.cfg yolov4_20000.weights -thresh 0.001 -ext_output -dont_show -out result.json < ../../HW2/test.txt
 ```
-
+[Pretrain weight](https://drive.google.com/file/d/1tMZML34PD7cvxMz7SpKit_nNA5FgVj-h/view?usp=sharing)
 
 ## Reference
 1. [YOLO](https://github.com/AlexeyAB/darknet).
