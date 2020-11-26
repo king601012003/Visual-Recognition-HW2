@@ -24,11 +24,11 @@ this code was trained and tested on Ubuntu 18.04
 conda activate yolo
 pip install -r requirements.txt
 
+sudo apt-get install libopencv-dev==3.2.0
+
 check the Makefile
 1. use cpu for training: GPU=0, CUDNN=0, OPENCV=1
 2. use gpu for training: GPU=1, CUDNN=1, OPENCV=1
-
-sudo apt-get install libopencv-dev==3.2.0
 
 cd /path/to/your/darknet/
 make
@@ -62,7 +62,8 @@ cs-t0828-2020-hw2
 │   │   │   ├── Put your own .names here
 │   │   ├── cfg
 │   │   │   ├── Put your own .data and .cfg here
-│   │   ├── yolov4_XXXXX.weights (pretrain weight)
+│   │   ├── yolov4_XXXXX.weights (testing weight)
+│   │   ├── yolov4.weights (pretrain weight)
 │   │   ├── Makefile
 ├── Visual_Recognition
 │   ├── HW2
@@ -75,35 +76,31 @@ cs-t0828-2020-hw2
 │   │   ├── test.txt
 
 ```
-I seperate the original training data (11185 images) into two part. One for training (10000 images) and one for evaluating(1185 images). 
+I seperate the original training data (33402 images) into two part. One for training (30000 images) and one for evaluating(3402 images). 
 
 ## Training
 To train models:
 
-Open the **model.py** with your own IDE and directly run it. 
-There are several hyperparameters in the code **156 ~ 163**.
+cd /path/to/your/darknet/
+
+./darknet detector train cfg/my.data cfg/yolov4.cfg yolov4.weights -dont_show -mjpeg_port 8090 -map -clear -gpus 0
+
+you can see the training loss: http://localhost:8090/
 
 The expected training times are:
-Model | GPUs | Image size | Training Epochs | Training Time
+Model | GPUs | Image size | Training Iteration | Training Time
 ------------ | ------------- | ------------- | ------------- | -------------
-efficientnet | 1x RTX 2080Ti | 224 x 224 | 100 | 180 minutes
-
-*  model_state = "train"
-*  batch_size = 25
-*  network = 8
+darknet | 1x RTX 2080Ti | 608 x 608 | 67000 | 24 hours
 
 
 ## Testing
 To test models:
 
-Open the **model.py** with your own IDE and directly run it. 
-There are several hyperparameters in the code **156 ~ 163**.
+cd /path/to/your/darknet/
 
-*  model_state = "eval" 
-*  batch_size = 25
-*  network = 8
-*  ckpt_path = "/PATH/TO/YOUR/WEIGHT/FILE"
-*  model_weight = ""epoch_XX.pkl""
+./darknet detector test cfg/my.data cfg/yolov4.cfg yolov4_20000.weights -thresh 0.001 -ext_output -dont_show -out result.json < ../../HW2/test.txt
+
+
 
 ## Reference
 1. [YOLO](https://github.com/AlexeyAB/darknet).
