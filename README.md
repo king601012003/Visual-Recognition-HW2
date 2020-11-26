@@ -30,7 +30,7 @@ pip install -r requirements.txt
 ```
 cs-t0828-2020-hw2
 
-for data preparation
+1. for data preparation
 ├── HW2
 │   ├── train
 │   │   ├── Put training images here
@@ -46,7 +46,7 @@ for data preparation
 │   ├── label2yolo.py
 │   ├── train_val_txt.py
 
-for model
+2. for model
 ├── yolov4
 │   ├── darknet
 │   │   ├── data
