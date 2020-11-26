@@ -28,14 +28,22 @@ pip install -r requirements.txt
 
 ## Dataset Preparation
 ```
-cs-t0828-2020-hw1
-├── HW1
-│   ├── data
-│   │   ├── Put all images here
-│   ├── train_img.csv
-│   ├── train_label.csv
-│   ├── test_img.csv
-│   ├── test_label.csv
+cs-t0828-2020-hw2
+├── HW2
+│   ├── darknet
+│   │   ├── Put model here
+│   ├── train
+│   │   ├── Put training images here
+│   ├── test
+│   │   ├── Put testing images here
+│   ├── label
+│   ├── result
+│   │   ├── Put output result.json here
+│   ├── digitStruct.mat
+│   ├── train_data.csv
+│   ├── json2submit.py
+│   ├── label2yolo.py
+│   ├── train_val_txt.py
 
 ```
 I seperate the original training data (11185 images) into two part. One for training (10000 images) and one for evaluating(1185 images). 
