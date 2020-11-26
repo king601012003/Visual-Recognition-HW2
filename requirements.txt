@@ -1,0 +1,5 @@
+cmake==3.12.2
+gcc==4.8.5
+cudnn==7.6.5
+cudatoolkit==10.0.130
+
