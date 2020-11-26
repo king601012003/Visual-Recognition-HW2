@@ -29,14 +29,14 @@ pip install -r requirements.txt
 ## Dataset Preparation
 ```
 cs-t0828-2020-hw2
+##############  for data preparation   ##############
 ├── HW2
-│   ├── darknet
-│   │   ├── Put model here
 │   ├── train
 │   │   ├── Put training images here
 │   ├── test
 │   │   ├── Put testing images here
 │   ├── label
+│   │   ├── Output YOLO type label will be here
 │   ├── result
 │   │   ├── Put output result.json here
 │   ├── digitStruct.mat
@@ -44,6 +44,24 @@ cs-t0828-2020-hw2
 │   ├── json2submit.py
 │   ├── label2yolo.py
 │   ├── train_val_txt.py
+
+##############  for model   ##############
+├── yolov4
+│   ├── darknet
+│   │   ├── data
+│   │   │   ├── Put your own .names here
+│   │   ├── cfg
+│   │   │   ├── Put your own .data and .cfg here
+│   │   ├── yolov4_XXXXX.weights (pretrain weight)
+├── Visual_Recognition
+│   ├── HW2
+│   │   ├── train
+│   │   │   ├── Put your training data and label here
+│   │   ├── train
+│   │   │   ├── Put your testing data here
+│   │   ├── train.txt
+│   │   ├── val.txt
+│   │   ├── test.txt
 
 ```
 I seperate the original training data (11185 images) into two part. One for training (10000 images) and one for evaluating(1185 images). 
