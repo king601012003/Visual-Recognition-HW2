@@ -81,9 +81,10 @@ I seperate the original training data (33402 images) into two part. One for trai
 ## Training
 To train models:
 
+```
 cd /path/to/your/darknet/
-
 ./darknet detector train cfg/my.data cfg/yolov4.cfg yolov4.weights -dont_show -mjpeg_port 8090 -map -clear -gpus 0
+```
 
 you can see the training loss: http://localhost:8090/
 
@@ -96,10 +97,10 @@ darknet | 1x RTX 2080Ti | 608 x 608 | 67000 | 24 hours
 ## Testing
 To test models:
 
+```
 cd /path/to/your/darknet/
-
 ./darknet detector test cfg/my.data cfg/yolov4.cfg yolov4_20000.weights -thresh 0.001 -ext_output -dont_show -out result.json < ../../HW2/test.txt
-
+```
 
 
 ## Reference
