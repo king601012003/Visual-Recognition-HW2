@@ -18,15 +18,20 @@ To reproduct my submission without retrainig, do the following steps:
 
 ## Installation
 
-this code was trained and tested with Python 3.6.10 and Pytorch 1.3.0 (Torchvision 0.4.1) on Ubuntu 18.04
+this code was trained and tested on Ubuntu 18.04
 
 ```
+conda activate yolo
+pip install -r requirements.txt
+
 check the Makefile
 1. use cpu for training: GPU=0, CUDNN=0, OPENCV=1
 2. use gpu for training: GPU=1, CUDNN=1, OPENCV=1
 
-cd /path/to/your/darknet/
+sudo apt-get install libopencv-dev==3.2.0
 
+cd /path/to/your/darknet/
+make
 
 ```
 
