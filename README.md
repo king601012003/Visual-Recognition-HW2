@@ -62,8 +62,7 @@ cs-t0828-2020-hw2
 │   │   │   ├── Put your own .names here
 │   │   ├── cfg
 │   │   │   ├── Put your own .data and .cfg here
-│   │   ├── yolov4_XXXXX.weights (testing weight)
-│   │   ├── yolov4.weights (pretrain weight)
+│   │   ├── yolov4_XXXXX.weights (pretrain weight)
 │   │   ├── Makefile
 ├── Visual_Recognition
 │   ├── HW2
@@ -83,7 +82,10 @@ To train models:
 
 ```
 cd /path/to/your/darknet/
+1. pretrain:
 ./darknet detector train cfg/my.data cfg/yolov4.cfg yolov4.weights -dont_show -mjpeg_port 8090 -map -clear -gpus 0
+2. no pretrain:
+./darknet detector train cfg/my.data cfg/yolov4.cfg -dont_show -mjpeg_port 8090 -map -clear -gpus 0
 ```
 
 you can see the training loss: http://localhost:8090/
