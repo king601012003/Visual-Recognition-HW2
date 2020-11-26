@@ -21,9 +21,13 @@ To reproduct my submission without retrainig, do the following steps:
 this code was trained and tested with Python 3.6.10 and Pytorch 1.3.0 (Torchvision 0.4.1) on Ubuntu 18.04
 
 ```
-conda create -n hpa python=3.6
-conda activate hpa
-pip install -r requirements.txt
+check the Makefile
+1. use cpu for training: GPU=0, CUDNN=0, OPENCV=1
+2. use gpu for training: GPU=1, CUDNN=1, OPENCV=1
+
+cd /path/to/your/darknet/
+
+
 ```
 
 ## Dataset Preparation
@@ -54,6 +58,7 @@ cs-t0828-2020-hw2
 │   │   ├── cfg
 │   │   │   ├── Put your own .data and .cfg here
 │   │   ├── yolov4_XXXXX.weights (pretrain weight)
+│   │   ├── Makefile
 ├── Visual_Recognition
 │   ├── HW2
 │   │   ├── train
@@ -96,5 +101,5 @@ There are several hyperparameters in the code **156 ~ 163**.
 *  model_weight = ""epoch_XX.pkl""
 
 ## Reference
-1. [Efficientnet](https://github.com/lukemelas/EfficientNet-PyTorch).
-2. [Mix_up](https://github.com/facebookresearch/mixup-cifar10)
+1. [YOLO](https://github.com/AlexeyAB/darknet).
+2. [.mat to .csv](https://github.com/pavitrakumar78/Street-View-House-Numbers-SVHN-Detection-and-Classification-using-CNN/blob/master/construct_datasets.py)
